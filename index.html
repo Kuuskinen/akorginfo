@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Akadeemilised organisatsioonid</title>
+	<style>
+		body {
+			font-family: 'Oswald', sans-serif;
+			color: #333;
+		}
+		
+		#container {
+			margin: auto;
+			width: 50%;
+		}
+	</style>
+</head>
+	<body>
+		<h1>Akadeemiliste organisatsioonide informatsioon</h1>
+		<div id="container">
+			Sisesta värv: <input type="text" id="color">
+			<button type="button" onclick="doStuff()">Otsi</button>
+			<div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var chosedColor = "";
+		var clearedColor = "";
+		
+		window.addEventListener('load', launchControl());
+		
+		function launchControl() {
+			console.log("10-4");
+			document.getElementById("color").addEventListener('change', changeChosedColor);
+		}
+		
+		function changeChosedColor() {
+			chosedColor = document.getElementById("color").value;
+			console.log("1 " + chosedColor);
+			clearedColor = checkInput(chosedColor);
+		}
+		
+		function doStuff() {
+			console.log(clearedColor);
+		}
+	</script>
+</html>
