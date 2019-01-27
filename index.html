@@ -14,8 +14,14 @@
 			width: 50%;
 		}
 		
-		td {
-			padding-right:5px;
+		#table {
+			border-collapse: collapse;
+		}
+		
+		#table td, #table th {
+			text-align: left;
+			border: 1px solid #ddd;
+			padding: 8px;
 		}
 	</style>
 </head>
@@ -79,6 +85,7 @@
 		}
 		
 		function getColor(selectedColor) {
+			console.log(selectedColor);
 			var orgsWithSelected = [];
 			for (var i = 0; i < orgs.length; i++) {
 				var orgColors = orgs[i].colors;
@@ -88,6 +95,7 @@
 					}
 				}
 			}
+			console.log("FINAL: "+orgsWithSelected);
 			return orgsWithSelected;
 		}
 		
