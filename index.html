@@ -13,11 +13,15 @@
 			margin: auto;
 			width: 50%;
 		}
+		
+		td {
+			padding-right:5px;
+		}
 	</style>
 </head>
 	<body>
-		<h1>Akadeemiliste organisatsioonide informatsioon</h1>
 		<div id="container">
+			<h1>Akadeemiliste organisatsioonide informatsioon</h1>
 			<select id="color">
 				<option value="none"></option>
 				<option value="puuduvad">Puuduvad</option>
@@ -35,7 +39,8 @@
 				<option value="violetne">Violetne</option>
 			</select>
 			<button type="button" onclick="doStuff()">Otsi</button>
-			<div>
+			<div id="table">
+				
 			</div>
 		</div>
 	</body>
@@ -67,17 +72,18 @@
 		];
 		
 		function doStuff() {
-			var selectedColor = document.getElementById("color");
+			var selectedColor = document.getElementById("color").value;
 			var orgsWithSelected = getColor(selectedColor);
 			var colorTable = makeTable(orgsWithSelected);
+			document.getElementById("table").innerHTML = colorTable;
 		}
 		
-		function getColor(color) {
+		function getColor(selectedColor) {
 			var orgsWithSelected = [];
-			for (var i = 0; i < orgs.length(); i++) {
+			for (var i = 0; i < orgs.length; i++) {
 				var orgColors = orgs[i].colors;
-				for (var j = 0; j < orgColors.length(); j++) {
-					if (orgColors[j].includes(color)) {
+				for (var j = 0; j < orgColors.length; j++) {
+					if (orgColors[j].includes(selectedColor)) {
 						orgsWithSelected.push(orgs[i]);
 					}
 				}
@@ -86,8 +92,8 @@
 		}
 		
 		function makeTable(orgsWithSelected) {
-			var table = "<table id=\"data\">+<tr>+<th>Nimi</th>+<th>Lipukiri</th>+<th>Asutamise aeg</th>+<th>Värvid</th></tr>";
-			for (var i = 0; i < orgsWithSelected.length(); i++) {
+			var table = "<table id=\"data\"><tr><th>Nimi</th><th>Lipukiri</th><th>Asutamise aeg</th><th>Värvid</th></tr>";
+			for (var i = 0; i < orgsWithSelected.length; i++) {
 				var selected = orgsWithSelected[i];
 				table += "<tr>"
 				table += "<td>" + selected.name +"</td>"+"<td>"+ selected.motto +"</td>"+"<td>"+ selected.date +"</td>"+"<td>"+ selected.colors+"</td>"+"\n";
