@@ -5,7 +5,6 @@
 	<title>Akadeemilised organisatsioonid</title>
 	<style>
 		body {
-			theme: jekyll-theme-midnight
 			font-family: 'Oswald', sans-serif;
 			color: #333;
 		}
@@ -26,24 +25,30 @@
 		</div>
 	</body>
 	<script>
-		var chosedColor = "";
-		var clearedColor = "";
+		var orgs = [
+			{name:"Korp! Filiae Patriae", motto:"Eesti tütar, Eesti kodu tugevasti seotud olgu", date:"27. oktoober 1920", colors:["valge", "punane", "roheline"]},
+			{name:"Korp! Indla", motto:"Sõnasse kindlust,teosse ausust, kodule armastust", date:"7. märts 1924", colors:["kirsipruun", "valge", "roheline"]},
+			{name:"Korp! Lembela", motto:"Constantia ad finem ducit", date:"24. oktoober 1924", colors:["helebeež", "roheline", "violetne"]},
+			{name:"Korp! Amicitia", motto:"Per aspera ad astra", date:"21. november 1924", colors:["sirelililla", "tumeroheline", "kuldne"]},
+			{name:"Korp! Sororitas Estoniae", motto:"Teadmised on ilu", date:"16. veebruar 2011", colors:["valge", "karmiinroosa", "must"]},
+			{name:"Korp! Vironia", motto:"Ühisus, kindlus, ausus", date:"26. november 1900", colors:["violetne", "must", "valge"]},
+			{name:"Korp! Fraternitas Estica", motto:"Teos õiglane ja vahvas, ustav sulle, Eesti rahvas", date:"9. mai 1907", colors:["sinine", "roheline", "valge"]},
+			{name:"Korp! Sakala", motto:"Üks kõigi, kõik ühe eest", date:"14. november 1909", colors:["sinine", "violetne", "valge"]},
+			{name:"Korp! Ugala", motto:"Isamaa, sõprus, ausus", date:"30. oktoober 1913", colors:["must", "sinine", "valge"]},
+			{name:"Korp! Rotalia", motto:"Eestimaa, mu isamaa", date:"10. november 1913", colors:["sinine", "must", "roheline"]},
+			{name:"Korp! Fraternitas Liviensis", motto:"Vendlus, ausus, hoolsus", date:"28. jaanuar 1918", colors:["violetne", "roheline", "valge"]},
+			{name:"Korp! Leola", motto:"Age quod agis", date:"16. oktoober 1920", colors:["violetne", "kollane", "valge"]},
+			{name:"Korp! Revelia", motto:"Üks kõige – kõik ühe eest", date:"3. detsember 1920", colors:["roheline", "must", "valge"]},
+			{name:"Korp! Tehnola", motto:"Kindlus, ausus, vendlus", date:"23. oktoober 1921", colors:["must", "roheline", "valge"]},
+			{name:"Korp! Fraternitas Tartuensis", motto:"Pidevas töös, tõe valguses, elurõõmsalt tulevikku!", date:"27. märts 1929", colors:["roheline", "valge", "violetne"]},
+			{name:"Eesti Üliõpilaste Selts", motto:"-", date:"7. aprill 1870", colors:["sinine", "must", "valge"]},
+			{name:"EÜS Põhjala", motto:"Töö isamaa kasuks", date:"25. november 1884", colors:["puuduvad"]},
+			{name:"ÜS Liivika", motto:"Ex solo ad solem soli patriae", date:"21. aprill 1909", colors:["puuduvad"]},
+			{name:"Eesti Naisüliõpilaste Selts", motto:"-", date:"14. november 1911", colors:["puuduvad"]},
+			{name:"EYS Veljesto", motto:"Õige vaimsuse kaudu vendlusele", date:"24. veebruar 1920", colors:["puuduvad"]},
+			{name:"ÜS Raimla", motto:"Demokraatia, isiksus, vendlus", date:"22. september 1922", colors:["sinine", "valge"]},
+			{name:"ÜÜ Fraternitas Fennica", motto:"-", date:"22. oktoober 1926", colors:["kuldne", "must", "valge"]}
+		];
 		
-		window.addEventListener('load', launchControl());
-		
-		function launchControl() {
-			console.log("10-4");
-			document.getElementById("color").addEventListener('change', changeChosedColor);
-		}
-		
-		function changeChosedColor() {
-			chosedColor = document.getElementById("color").value;
-			console.log("1 " + chosedColor);
-			clearedColor = checkInput(chosedColor);
-		}
-		
-		function doStuff() {
-			console.log(clearedColor);
-		}
 	</script>
 </html>
