@@ -18,7 +18,22 @@
 	<body>
 		<h1>Akadeemiliste organisatsioonide informatsioon</h1>
 		<div id="container">
-			Sisesta värv: <input type="text" id="color">
+			<select id="color">
+				<option value="none"></option>
+				<option value="puuduvad">Puuduvad</option>
+				<option value="beež">Beež</option>
+				<option value="kollane">Kollane</option>
+				<option value="kuldne">Kuldne</option>
+				<option value="lilla">Lilla</option>
+				<option value="must">Must</option>
+				<option value="pruun">Pruun</option>
+				<option value="punane">Punane</option>
+				<option value="roheline">Roheline</option>
+				<option value="roosa">Roosa</option>
+				<option value="sinine">Sinine</option>
+				<option value="valge">Valge</option>
+				<option value="violetne">Violetne</option>
+			</select>
 			<button type="button" onclick="doStuff()">Otsi</button>
 			<div>
 			</div>
@@ -49,6 +64,24 @@
 			{name:"ÜS Raimla", motto:"Demokraatia, isiksus, vendlus", date:"22. september 1922", colors:["sinine", "valge"]},
 			{name:"ÜÜ Fraternitas Fennica", motto:"-", date:"22. oktoober 1926", colors:["kuldne", "must", "valge"]}
 		];
+		
+		function doStuff() {
+			var selectedColor = document.getElementById("color");
+			var orgsWithSelected = getColor(selectedColor);
+		}
+		
+		function getColor(color) {
+			var orgsWithSelected = [];
+			for (var i = 0; i < orgs.length(); i++) {
+				var orgColors = orgs[i].colors;
+				for (var j = 0; j < orgColors.length(); j++) {
+					if (orgColors[j].includes(color) {
+						orgsWithSelected.push(orgs[i]);
+					}
+				}
+			}
+			return orgsWithSelected;
+		}
 		
 	</script>
 </html>
