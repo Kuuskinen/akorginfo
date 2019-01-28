@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -85,13 +85,16 @@
 		}
 		
 		function getColor(selectedColor) {
-			console.log(selectedColor);
 			var orgsWithSelected = [];
-			for (var i = 0; i < orgs.length; i++) {
-				var orgColors = orgs[i].colors;
-				for (var j = 0; j < orgColors.length; j++) {
-					if (orgColors[j].includes(selectedColor)) {
-						orgsWithSelected.push(orgs[i]);
+			if (selectedColor == "none") {
+				orgsWithSelected = orgs;
+			} else {
+				for (var i = 0; i < orgs.length; i++) {
+					var orgColors = orgs[i].colors;
+					for (var j = 0; j < orgColors.length; j++) {
+						if (orgColors[j].includes(selectedColor)) {
+							orgsWithSelected.push(orgs[i]);
+						}
 					}
 				}
 			}
